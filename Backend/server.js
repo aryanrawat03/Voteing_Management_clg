@@ -14,6 +14,14 @@ const {
   updateElectionStatuses,
 } = require("./controllers/electionController");
 
+// Import rate limiters
+const {
+  globalLimiter,
+  authLimiter,
+  votingLimiter,
+  adminLimiter,
+} = require("./middleware/rateLimiter");
+
 dotenv.config();
 
 connectDB();
@@ -24,14 +32,46 @@ setInterval(async () => {
 
 const app = express();
 
+// ==========================================
+// TRUST PROXY CONFIGURATION
+// ==========================================
+// For single-server deployments, this can be omitted or set to false.
+// If your Express app is behind a reverse proxy (nginx, AWS ELB, Cloudflare, etc.),
+// set this to 1 so that rate limiters correctly identify client IPs from the
+// X-Forwarded-For header instead of the proxy's IP address.
+// For now, this is commented out for local/direct deployment.
+// Uncomment if deploying behind a reverse proxy:
+// app.set("trust proxy", 1);
+
 app.use(cors({ origin: true, credentials: true }));
 app.use(express.json({ limit: "2mb" }));
 
-app.use("/api/auth", require("./routes/authRoutes"));
-app.use("/api/admin", adminRoutes);
+// ==========================================
+// APPLY GLOBAL RATE LIMITER
+// ==========================================
+// Purpose: Protect entire API from abuse
+// Limit: 300 requests per IP per 15 minutes
+// This applies to ALL endpoints before any other middleware
+app.use(globalLimiter);
+
+// ==========================================
+// APPLY SPECIFIC RATE LIMITERS TO ROUTES
+// ==========================================
+
+// Authentication endpoints: stricter limit (20 per 15 min)
+app.use("/api/auth", authLimiter, require("./routes/authRoutes"));
+
+// Admin endpoints: reasonable limit (100 per 15 min)
+app.use("/api/admin", adminLimiter, adminRoutes);
+
+// Voting endpoints: moderate limit (30 per 15 min)
+app.use("/api/votes", votingLimiter, voteRoutes);
+
+// ==========================================
+// APPLY REMAINING ROUTES (use global limiter only)
+// ==========================================
 app.use("/api/elections", electionRoutes);
 app.use("/api/candidates", candidateRoutes);
-app.use("/api/votes", voteRoutes);
 app.use("/api/voters", voterRoutes);
 app.use("/api/results", resultsRoutes);
 

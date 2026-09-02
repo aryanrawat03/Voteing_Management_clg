@@ -132,7 +132,7 @@ function AdminResults() {
           {/* ELECTIONS LIST */}
           <div className="lg:col-span-1">
             <div className="rounded-2xl border border-slate-700 bg-slate-800 overflow-hidden">
-              <div className="bg-gradient-to- r from-indigo-600 to-indigo-700 px-6 py-4">
+              <div className="bg-gradient-to-r from-indigo-600 to-indigo-700 px-6 py-4">
                 <h2 className="text-xl font-bold text-white">Elections</h2>
                 <p className="text-sm text-indigo-200 mt-1">
                   {elections.length} completed elections
@@ -206,7 +206,7 @@ function AdminResults() {
                   </div>
 
                   <div className="grid grid-cols-3 gap-4 p-4 sm:p-8 border-b border-slate-700">
-                    <div className="rounded-xl bg-gradient-to- br from-slate-800 to-slate-900 p-6 text-center shadow-lg shadow-slate-900/20">
+                    <div className="rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 p-6 text-center shadow-lg shadow-slate-900/20">
                       <Users size={32} className="mx-auto text-indigo-400 mb-3" />
                       <p className="text-base text-slate-300">Total Votes</p>
                       <p className="mt-2 text-4xl font-bold text-white">
@@ -214,7 +214,7 @@ function AdminResults() {
                       </p>
                     </div>
 
-                    <div className="rounded-xl bg-gradient-to- br from-slate-800 to-slate-900 p-6 text-center shadow-lg shadow-slate-900/20">
+                    <div className="rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 p-6 text-center shadow-lg shadow-slate-900/20">
                       <BarChart3 size={32} className="mx-auto text-purple-400 mb-3" />
                       <p className="text-base text-slate-300">Candidates</p>
                       <p className="mt-2 text-4xl font-bold text-white">
@@ -222,7 +222,7 @@ function AdminResults() {
                       </p>
                     </div>
 
-                    <div className="rounded-xl bg-gradient-to- br from-slate-800 to-slate-900 p-6 text-center shadow-lg shadow-slate-900/20">
+                    <div className="rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 p-6 text-center shadow-lg shadow-slate-900/20">
                       <TrendingUp size={32} className="mx-auto text-emerald-400 mb-3" />
                       <p className="text-base text-slate-300">Status</p>
                       <p className="mt-2 text-lg font-bold text-emerald-300 uppercase">
@@ -237,7 +237,7 @@ function AdminResults() {
                       <button
                         onClick={() => publishResults(selectedElection._id)}
                         disabled={publishing || results.election.resultsPublished}
-                        className="w-full rounded-xl bg-gradient-to- r from-emerald-600 to-emerald-700 px-8 py-4 text-lg font-bold text-white transition hover:shadow-lg hover:shadow-emerald-500/50 disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="w-full rounded-xl bg-gradient-to-r from-emerald-600 to-emerald-700 px-8 py-4 text-lg font-bold text-white transition hover:shadow-lg hover:shadow-emerald-500/50 disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         {publishing ? "Publishing..." : results.election.resultsPublished ? "✓ Results Published" : "📢 Publish Results"}
                       </button>
@@ -251,8 +251,8 @@ function AdminResults() {
 
                 {/* WINNER HIGHLIGHT */}
                 {results.winner && (
-                  <div className="rounded-2xl border-2 border-yellow-400/60 bg-gradient-to- br from-amber-100 via-yellow-200 to-yellow-300 overflow-hidden shadow-xl shadow-yellow-200/40">
-                    <div className="bg-gradient-to- r from-yellow-400 to-amber-300 px-8 py-6">
+                  <div className="rounded-2xl border-2 border-yellow-400/60 bg-gradient-to-br from-amber-100 via-yellow-200 to-yellow-300 overflow-hidden shadow-xl shadow-yellow-200/40">
+                    <div className="bg-gradient-to-r from-yellow-400 to-amber-300 px-8 py-6">
                       <div className="flex items-center gap-3">
                         <Award size={36} className="text-slate-900" />
                         <div>
@@ -288,7 +288,7 @@ function AdminResults() {
                       <div className="mt-8">
                         <div className="h-4 overflow-hidden rounded-full bg-yellow-900/40 border border-yellow-200/30">
                           <div
-                            className="h-full bg-gradient-to- r from-yellow-300 to-yellow-500 transition-all duration-500"
+                            className="h-full bg-gradient-to-r from-yellow-300 to-yellow-500 transition-all duration-500"
                             style={{ width: `${results.winner.percentage}%` }}
                           />
                         </div>
@@ -299,7 +299,7 @@ function AdminResults() {
 
                 {/* RESULTS TABLE */}
                 <div className="rounded-2xl border border-slate-700 bg-slate-800 overflow-hidden">
-                  <div className="bg-gradient-to- r from-indigo-600 to-indigo-700 px-8 py-6">
+                  <div className="bg-gradient-to-r from-indigo-600 to-indigo-700 px-8 py-6">
                     <h3 className="text-2xl font-bold text-white">
                       Complete Results
                     </h3>
@@ -395,8 +395,8 @@ function AdminResults() {
                               <div
                                 className={`h-full transition-all duration-500 ${
                                   index === 0
-                                    ? 'bg-gradient-to- r from-yellow-500 to-yellow-400'
-                                    : 'bg-gradient-to- r from-indigo-500 to-indigo-400'
+                                    ? 'bg-gradient-to-r from-yellow-500 to-yellow-400'
+                                    : 'bg-gradient-to-r from-indigo-500 to-indigo-400'
                                 }`}
                                 style={{ width: `${candidate.percentage}%` }}
                               />

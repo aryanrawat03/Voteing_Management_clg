@@ -132,7 +132,7 @@ function VoterResults() {
           <div className="mx-auto w-full max-w-5xl space-y-6">
             {/* ELECTION INFO & STATS */}
             <div className="rounded-2xl border border-slate-700 bg-slate-800 overflow-hidden">
-              <div className="bg-gradient-to- r from-indigo-700 to-indigo-800 px-8 py-8">
+              <div className="bg-gradient-to- br from-indigo-700 to-indigo-800 px-8 py-8">
                 <h2 className="text-3xl font-bold text-white mb-2">
                   {results.election.title}
                 </h2>
@@ -141,7 +141,7 @@ function VoterResults() {
               </div>
 
               <div className="grid grid-cols-3 gap-4 p-4 sm:gap-6 sm:p-8 border-b border-slate-700">
-                <div className="rounded-xl bg-gradient-to-  br from-slate-800 to-slate-900 p-6 text-center shadow-lg shadow-slate-900/20">
+                <div className="rounded-xl bg-gradient-to- br from-slate-800 to-slate-900 p-6 text-center shadow-lg shadow-slate-900/20">
                   <Users size={36} className="mx-auto text-indigo-400 mb-3" />
                   <p className="text-base text-slate-300 uppercase tracking-wide">Total Votes Cast</p>
                   <p className="mt-3 text-5xl font-bold text-white">
@@ -170,7 +170,7 @@ function VoterResults() {
             {/* WINNER HIGHLIGHT */}
             {results.winner && (
               <div className="rounded-2xl border-2 border-yellow-400/60 bg-gradient-to- br from-amber-100 via-yellow-200 to-yellow-300 overflow-hidden shadow-xl shadow-yellow-200/40">
-                <div className="bg-gradient-to- r from-yellow-400 to-amber-300 px-8 py-8">
+                <div className="bg-gradient-to- br from-yellow-400 to-amber-300 px-8 py-8">
                   <div className="flex items-center gap-4">
                     <Award size={40} className="text-slate-900" />
                     <div>
@@ -207,7 +207,7 @@ function VoterResults() {
                     <p className="text-xs text-yellow-100 mb-3 uppercase tracking-[0.18em]">Vote Distribution</p>
                     <div className="h-6 overflow-hidden rounded-full bg-yellow-900/40 border border-yellow-200/30">
                       <div
-                        className="h-full bg-gradient-to- r from-yellow-300 to-yellow-500 transition-all duration-700 shadow-lg shadow-yellow-500/40"
+                        className="h-full bg-gradient-to- br from-yellow-300 to-yellow-500 transition-all duration-700 shadow-lg shadow-yellow-500/40"
                         style={{ width: `${results.winner.percentage}%` }}
                       />
                     </div>
@@ -218,7 +218,7 @@ function VoterResults() {
 
             {/* DETAILED RESULTS TABLE */}
             <div className="rounded-2xl border border-slate-700 bg-slate-800 overflow-hidden">
-              <div className="bg-gradient-to- r from-indigo-600 to-indigo-700 px-8 py-6">
+              <div className="bg-gradient-to- br from-indigo-600 to-indigo-700 px-8 py-6">
                 <h3 className="text-2xl font-bold text-white flex items-center gap-2">
                   <BarChart3 size={28} />
                   Complete Results by Candidate
@@ -289,7 +289,7 @@ function VoterResults() {
                 .map((candidate, index) => (
                   <div
                     key={candidate.candidateId}
-                    className="rounded-xl bg-gradient-to- br from-slate-700 to-slate-800 p-6 border border-slate-600 hover:border-slate-500 transition"
+                    className="rounded-xl bg-gradient-to -br from-slate-700 to-slate-800 p-6 border border-slate-600 hover:border-slate-500 transition"
                   >
                     <div className="flex items-start justify-between mb-4">
                       <div>
@@ -321,8 +321,8 @@ function VoterResults() {
                         <div
                           className={`h-full transition-all duration-500 ${
                             index === 0
-                              ? 'bg-gradient-to- r from-yellow-500 to-yellow-400'
-                              : 'bg-gradient-to- r from-indigo-500 to-indigo-400'
+                              ? 'bg-gradient-to- br from-yellow-500 to-yellow-400'
+                              : 'bg-gradient-to- br from-indigo-500 to-indigo-400'
                           }`}
                           style={{ width: `${candidate.percentage}%` }}
                         />

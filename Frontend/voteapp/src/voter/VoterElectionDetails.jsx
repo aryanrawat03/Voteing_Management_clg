@@ -191,7 +191,7 @@ function VoterElectionDetails() {
               {(election.status === "ended" || election.status === "results_published") && (
                 <button
                   onClick={() => navigate(`/voter/results/${id}`)}
-                  className="w-full flex items-center justify-center gap-2 rounded-lg bg-gradient-to- r from-indigo-600 to-indigo-700 px-6 py-3 text-base font-semibold text-white transition hover:shadow-lg hover:shadow-indigo-500/50"
+                  className="w-full flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-indigo-600 to-indigo-700 px-6 py-3 text-base font-semibold text-white transition hover:shadow-lg hover:shadow-indigo-500/50"
                 >
                   <TrendingUp size={20} />
                   View Election Results

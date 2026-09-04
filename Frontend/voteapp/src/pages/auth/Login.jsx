@@ -97,7 +97,7 @@ function Login() {
 
       <div className="min-h-screen bg-[#05071b] px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
         <div className="mx-auto grid max-w-4xl overflow-hidden rounded-[18px] bg-white shadow-[0_24px_70px_rgba(0,0,0,0.42)] lg:grid-cols-[1fr_1.08fr]">
-          <div className="relative hidden overflow-hidden bg-gradient-to- br from-[#4b36f5] via-[#513af4] to-[#3d28d9] p-8 text-white lg:flex lg:flex-col lg:justify-between">
+          <div className="relative hidden overflow-hidden bg-gradient-to-brbg-gradient-to-br from-[#4b36f5] via-[#513af4] to-[#3d28d9] p-8 text-white lg:flex lg:flex-col lg:justify-between">
             <div className="absolute -right-12 -top-14 h-52 w-52 rounded-full bg-[#7465ff]/55" />
             <div className="absolute -bottom-28 -left-24 h-72 w-72 rounded-full bg-[#3c2bdc]/75" />
 
@@ -241,7 +241,7 @@ function Login() {
 
                 <button
                   type="submit"
-                  className="flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to- br from-[#5f4ef7] to-[#4b3fe1] px-4 py-3.5 text-sm font-semibold text-white shadow-lg shadow-violet-200 transition hover:from-[#4a3fe3] hover:to-[#3a30cc]"
+                  className="flex w-full items-center justify-center gap-2 rounded-2xl bg-blue-500 from-[#5f4ef7] to-[#4b3fe1] px-4 py-3.5 text-sm font-semibold text-white shadow-lg shadow-violet-200 transition hover:from-[#4a3fe3] hover:to-[#3a30cc]"
                 >
                   Login as {role === "voter" ? "Voter" : "Admin"}
                   <ArrowRight size={18} />

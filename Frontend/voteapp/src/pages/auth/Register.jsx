@@ -413,7 +413,7 @@ function Register() {
 
                 <button
                   type="submit"
-                  className="flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to- br from-[#5f4ef7] to-[#4b3fe1] px-4 py-3.5 text-sm font-semibold text-white shadow-lg shadow-violet-200 transition hover:from-[#4a3fe3] hover:to-[#3a30cc]"
+                  className="flex w-full items-center justify-center gap-2 rounded-2xl bg-blue-500 from-[#5f4ef7] to-[#4b3fe1] px-4 py-3.5 text-sm font-semibold text-white shadow-lg shadow-violet-200 transition hover:from-[#4a3fe3] hover:to-[#3a30cc]"
                 >
                   Create account
                   <ArrowRight size={18} />
